@@ -1,0 +1,8 @@
+FROM node:latest
+ENV NODE_ENV=development
+COPY ./todo-app-backend /var/www
+WORKDIR /var/www
+RUN npm install
+RUN npm audit fix --force
+ENTRYPOINT npm run start:dev
+EXPOSE 3000

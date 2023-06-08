@@ -1,0 +1,37 @@
+version: '3.3'
+
+services:
+  api_back:
+    container_name: api_back
+    build: 
+      dockerfile: ./todo-app-backend/dockerfile
+      context: .
+    image: nestjs
+    environment:
+      NODE_ENV: development
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./todo-app-backend/src:/var/www/src
+    networks: 
+      - development-network
+    depends_on:
+      - db
+
+  db:
+    image: postgres:latest
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 123
+      POSTGRES_DB: todo_app
+    ports:
+      - 5432:5432
+    volumes:
+      - ./database/postgres:/var/lib/postgresql/data
+    networks:
+      - development-network
+
+networks:
+  development-network:
+    driver: bridge
