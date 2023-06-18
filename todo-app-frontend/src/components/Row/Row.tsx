@@ -1,7 +1,7 @@
-import styled from "styled-components";
-import { LayoutProps, SpaceProps, layout, space } from "styled-system";
+import styled from 'styled-components';
+import { LayoutProps, SpaceProps, layout, space } from 'styled-system';
 
-type RowProps = LayoutProps & SpaceProps
+type RowProps = LayoutProps & SpaceProps;
 
 export const Row = styled.div<RowProps>`
   display: flex;

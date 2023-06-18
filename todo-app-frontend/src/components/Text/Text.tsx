@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import { SpaceProps, TypographyProps, space, typography } from "styled-system";
+import styled from 'styled-components';
+import { SpaceProps, TypographyProps, space, typography } from 'styled-system';
 
 type TextProps = TypographyProps & SpaceProps;
 

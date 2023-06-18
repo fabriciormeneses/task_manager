@@ -1,6 +1,5 @@
-import { Routes } from "routes";
-import { GlobalStyles, Theme } from "themes";
-
+import { Routes } from 'routes';
+import { GlobalStyles, Theme } from 'themes';
 
 export const App = () => {
   return (
