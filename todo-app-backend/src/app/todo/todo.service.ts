@@ -10,7 +10,7 @@ export class TodoService {
         private readonly todoRepository: Repository<TodoEntity>, ){}
 
     async findAll() {
-        return await this.todoRepository.find();
+        return await this.todoRepository.find({order: {createdAt: 'DESC'}});
     }
 
     async findOneOrFail(id: string) {

@@ -10,13 +10,28 @@ services:
     environment:
       NODE_ENV: development
     ports:
-      - "3000:3000"
+      - "3001:3000"
     volumes:
       - ./todo-app-backend/src:/var/www/src
     networks: 
       - development-network
     depends_on:
       - db
+  # api_front:
+  #   container_name: api_front
+  #   build: 
+  #     dockerfile: ./todo_app-api_frontend/dockerfile
+  #     context: .
+  #   environment:
+  #     NODE_ENV: development
+  #   ports:
+  #     -"3000:3000"
+  #   volumes:
+  #     - ./todo-api_frontend/:var/www
+  #   networks:
+  #     - development-network
+  #   depends_on:
+  #     - api_back
 
   db:
     image: postgres:latest
