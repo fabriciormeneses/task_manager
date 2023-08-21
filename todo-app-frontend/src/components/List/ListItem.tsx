@@ -10,7 +10,7 @@ export type ListItemProps = {
 };
 
 // eslint-disable-next-line react/prop-types
-export const ListItem: React.FC<ListItemProps> = ({ index, id, task, isDone, isActive, onClick }) => {
+export const ListItem: React.FC<ListItemProps> = ({ index, task, isDone, isActive, onClick }) => {
   return (
     <Column
       width="100%"
