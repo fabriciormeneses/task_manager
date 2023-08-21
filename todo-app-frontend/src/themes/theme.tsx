@@ -1,4 +1,5 @@
-/* eslint-disable */
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import React from 'react';
 import { ThemeProvider } from 'styled-components';
 
 const fontSizes: any = [14, 18, 20, 96];
@@ -24,4 +25,4 @@ const theme = {
 
 export type ThemeType = typeof theme;
 
-export const Theme: React.FC = ({ children }) => <ThemeProvider theme={theme}>{children}</ThemeProvider>;
+export const Theme: React.FC = (childrens) => <ThemeProvider theme={theme}>{childrens.children}</ThemeProvider>;
